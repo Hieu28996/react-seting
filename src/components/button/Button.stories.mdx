@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Button } from './Button';
+
+export const Template = (args) => <Button {...args} />;
+
+<Meta
+    title="Components/Button"
+    component={Button}
+    argTypes={{
+        color: {
+        options: ['primary', 'secondary'],
+        control: { type: 'select' }
+        },
+        size: {
+        options: ['medium', 'default'],
+        control: { type: 'select' }
+        },
+    }}
+/>
+
+<ArgsTable story={PRIMARY_STORY} />
+
+<Canvas>
+    <Story
+        name="Primary"
+        args={{
+            text: 'test',
+            color: 'primary',
+            size: 'default',
+            isDisabled: true
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Icon } from './Icon';
+
+export const Template = (args) => <Icon {...args} />;
+
+<Meta
+    title="Components/Icon"
+    component={Icon}
+/>
+
+<ArgsTable story={PRIMARY_STORY} />
+
+<Canvas>
+    <Story
+        name="Primary"
+        args={{
+            icon: 'search'
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
